@@ -30,7 +30,9 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_MONERIS_STORE_ID: z.string().min(1),
+    NEXT_PUBLIC_MONERIS_CHECKOUT_ID: z.string().min(1),
+    NEXT_PUBLIC_MONERIS_API_TOKEN: z.string().min(1),
   },
 
   /**
@@ -44,6 +46,10 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     GITHUB_ID: process.env.GITHUB_ID,
     GITHUB_SECRET: process.env.GITHUB_SECRET,
+    NEXT_PUBLIC_MONERIS_STORE_ID: process.env.NEXT_PUBLIC_MONERIS_STORE_ID,
+    NEXT_PUBLIC_MONERIS_CHECKOUT_ID:
+      process.env.NEXT_PUBLIC_MONERIS_CHECKOUT_ID,
+    NEXT_PUBLIC_MONERIS_API_TOKEN: process.env.NEXT_PUBLIC_MONERIS_API_TOKEN,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
