@@ -20,11 +20,15 @@ export default function Home() {
             Moneris <span className={styles.pinkSpan}>T3</span> Demo
           </h1>
 
+          <Link href="/moneris" className={styles.showcaseText}>
+            Add New Card
+          </Link>
+
           <div className={styles.showcaseContainer}>
             <p className={styles.showcaseText}>
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
-            <AuthShowcase />
+            {/* <AuthShowcase /> */}
           </div>
         </div>
       </main>
