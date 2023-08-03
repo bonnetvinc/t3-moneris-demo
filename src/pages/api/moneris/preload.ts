@@ -1,14 +1,9 @@
 import { env } from "~/env.mjs";
 import { type NextApiRequest, type NextApiResponse } from 'next';
 import { v4 as uuid } from 'uuid';
+import { type PreloadMonerisCheckoutResponse } from "~/lib/moneris/monerisTypes";
 
-type MonerisResponse = {
-    response: {
-        success: boolean,
-        ticket: string
-    }
-}
-const c = async (req: NextApiRequest, res: NextApiResponse<MonerisResponse>): Promise<void> => {
+const preloadRequest = async (req: NextApiRequest, res: NextApiResponse<PreloadMonerisCheckoutResponse>): Promise<void> => {
 
     if (req.method === 'POST') {
         try {
@@ -29,7 +24,7 @@ const c = async (req: NextApiRequest, res: NextApiResponse<MonerisResponse>): Pr
                 body: data,
             })
 
-            const monerisResponseJson = await monerisResponse.json() as MonerisResponse;
+            const monerisResponseJson = await monerisResponse.json() as PreloadMonerisCheckoutResponse;
             return res.status(200).json(monerisResponseJson);
 
         } catch (e) {
@@ -39,4 +34,4 @@ const c = async (req: NextApiRequest, res: NextApiResponse<MonerisResponse>): Pr
     return res.status(405).json({ message: 'Unsupported method only PATCH is allowed' });
 };
 
-export default c;
+export default preloadRequest;

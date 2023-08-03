@@ -1,26 +1,27 @@
 "use client";
 import React, { useEffect } from "react";
-import useMoneris from "./useMoneris";
-import { env } from "~/env.mjs";
+
+import useMonerisV2 from "./useMonerisV2";
+import MonerisResponse from "./MonerisResponse";
 
 const MonerisMco = () => {
-  const { isLoading } = useMoneris();
-
-  console.info("moneris loaded", isLoading);
+  const { monerisIsLoading, monerisResult } = useMonerisV2();
 
   useEffect(() => {
-    if (isLoading) {
+    if (monerisIsLoading) {
       console.info("moneris loaded");
     }
-  }, [isLoading]);
+  }, [monerisIsLoading]);
+
+  if (monerisResult) {
+    return <MonerisResponse {...monerisResult} />;
+  }
 
   return (
     <div>
       <p>MCO Module</p>
 
-      {isLoading && <p>Loading...</p>}
-
-      {/* <button onClick={(}>preload</button> */}
+      {monerisIsLoading && <p>Loading...</p>}
 
       <div id="monerisCheckout"></div>
     </div>
