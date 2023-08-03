@@ -16,20 +16,15 @@ const MonerisResponse = (props: MonerisReceiptResponse) => {
           <span>issuer id: {props.response.receipt.cc.issuer_id}</span>
         </li>
         <li>
-          {" "}
           <span>token: {props.response.receipt.cc.tokenize.datakey}</span>
         </li>
         <li>
-          <span>token: {props.response.receipt.cc.tokenize.first4last4}</span>
+          <span>mask: {props.response.receipt.cc.tokenize.first4last4}</span>
         </li>
         <li>
-          <span>token: {props.response.receipt.cc.tokenize.message}</span>
+          <span>message: {props.response.receipt.cc.tokenize.message}</span>
         </li>
       </ul>
-      <span>issuer id: {props.response.receipt.cc.issuer_id}</span>
-      <span>token: {props.response.receipt.cc.tokenize.datakey}</span>
-      <span>token: {props.response.receipt.cc.tokenize.first4last4}</span>
-      <span>token: {props.response.receipt.cc.tokenize.message}</span>
     </div>
   );
 };
