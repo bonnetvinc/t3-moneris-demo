@@ -25,7 +25,9 @@ const MonerisCardVerification = ({
 
   return (
     <>
-
+      <Head>
+        <script src={env.NEXT_PUBLIC_MONERIS_JS_URL} defer />
+      </Head>
       <div id="monerisCheckout"></div>
     </>
   );

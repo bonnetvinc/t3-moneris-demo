@@ -4,14 +4,13 @@ import { env } from "~/env.mjs";
 
 export default function Home() {
   console.info("load index.tsx", env.NEXT_PUBLIC_MONERIS_JS_URL);
-  
+
   return (
     <>
       <Head>
         <title>Moneris T3 Demo</title>
         <meta name="description" content="Moneris T3 Demo" />
         <link rel="icon" href="/favicon.ico" />
-        <script src={env.NEXT_PUBLIC_MONERIS_JS_URL} defer />
       </Head>
 
       <main>
