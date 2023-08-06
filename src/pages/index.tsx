@@ -3,6 +3,8 @@ import ResponsiveDrawer from "~/components/drawer-layout/ResponsiveDrawerLayout"
 import { env } from "~/env.mjs";
 
 export default function Home() {
+  console.info("load index.tsx", env.NEXT_PUBLIC_MONERIS_JS_URL);
+  
   return (
     <>
       <Head>
