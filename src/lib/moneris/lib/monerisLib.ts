@@ -1,4 +1,5 @@
-import { MonerisCheckoutCallbackType, type PreloadMonerisCheckoutResponse, type MonerisCheckoutSetCallback, type MonerisChekout, type MonerisReceiptResponse } from "./monerisTypes";
+import { MonerisCheckoutCallbackType, type MonerisCheckoutSetCallback, type MonerisChekout, type MonerisReceiptResponse, type PreloadMonerisCheckoutResponse } from "../types/moneris";
+
 
 
 

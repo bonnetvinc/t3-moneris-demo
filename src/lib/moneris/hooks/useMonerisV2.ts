@@ -4,8 +4,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { useEffect, useState } from 'react';
-import { getMonerisReceipt, openCheckout, preloadMonerisCheckout, setCallback } from './monerisLib';
-import { type MonerisCheckoutSetCallback, type MonerisChekout, type MonerisHandlerResponse, type MonerisReceiptResponse } from './monerisTypes';
+import { getMonerisReceipt, openCheckout, preloadMonerisCheckout, setCallback } from '../lib/monerisLib';
+import { type MonerisCheckoutSetCallback, type MonerisChekout, type MonerisHandlerResponse, type MonerisReceiptResponse } from '../types/moneris';
 
 
 const useMoneris = () => {

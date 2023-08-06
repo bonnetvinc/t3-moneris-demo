@@ -1,5 +1,5 @@
 import React from "react";
-import { type MonerisReceiptResponse } from "./monerisTypes";
+import { type MonerisReceiptResponse } from "../types/moneris";
 
 const MonerisResponse = (props: MonerisReceiptResponse) => {
   return (

@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from "next";
 import { env } from "~/env.mjs";
-import { type MonerisReceiptResponse } from "~/lib/moneris/monerisTypes";
+import { type MonerisReceiptResponse } from "~/lib/moneris/types/moneris";
 
 interface ExtendedNextApiRequest extends NextApiRequest {
     body: string;
@@ -19,9 +19,9 @@ const receiptRequest = async (req: ExtendedNextApiRequest, res: NextApiResponse<
 
         const monerisUrl = "https://gatewayt.moneris.com/chkt/request/request.php";
         const data = JSON.stringify({
-            store_id: env.NEXT_PUBLIC_MONERIS_STORE_ID,
-            api_token: env.NEXT_PUBLIC_MONERIS_API_TOKEN,
-            checkout_id: env.NEXT_PUBLIC_MONERIS_CHECKOUT_ID,
+            store_id: env.MONERIS_STORE_ID,
+            api_token: env.MONERIS_API_TOKEN,
+            checkout_id: env.MONERIS_CHECKOUT_ID,
             environment: "qa",
             action: "receipt",
             ticket: ticketId,
