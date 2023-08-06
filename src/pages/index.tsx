@@ -9,6 +9,7 @@ export default function Home() {
         <meta name="description" content="Moneris T3 Demo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main>
         <ResponsiveDrawer title="Moneris T3 Demo">
           <div>Home</div>

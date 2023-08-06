@@ -1,7 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,10 +9,21 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Transaction {
+  id String @id @default(cuid())
+  description String
+  credit Float?
+  debit Float?
+  createdAt DateTime @default(now())
+}
+
+model RegisterdCreditCard {
+  id String @id @default(cuid())
+  mask String
+  date String
+  dataKey String
+  issuerId String
+  createdAt DateTime @default(now())
 }
 
 // Necessary for Next auth

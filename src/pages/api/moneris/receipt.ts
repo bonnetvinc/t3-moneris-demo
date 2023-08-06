@@ -11,19 +11,20 @@ interface BodyType { ticket: string }
 const receiptRequest = async (req: ExtendedNextApiRequest, res: NextApiResponse<MonerisReceiptResponse>): Promise<void> => {
 
     let payload: unknown;
+    const monerisAction = "receipt";
 
     if (req.body && req.method === 'POST') {
         payload = JSON.parse(req.body)
         const body = payload as BodyType;
         const ticketId = body.ticket;
 
-        const monerisUrl = "https://gatewayt.moneris.com/chkt/request/request.php";
+        const monerisUrl = env.NEXT_PUBLIC_MONERIS_URL;
         const data = JSON.stringify({
             store_id: env.MONERIS_STORE_ID,
             api_token: env.MONERIS_API_TOKEN,
             checkout_id: env.MONERIS_CHECKOUT_ID,
             environment: "qa",
-            action: "receipt",
+            action: monerisAction,
             ticket: ticketId,
         });
 

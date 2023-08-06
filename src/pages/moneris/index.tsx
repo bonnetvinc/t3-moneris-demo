@@ -7,9 +7,7 @@ import MonerisMco from "~/lib/moneris/components/MonerisMco";
 const MonerisRegisterCard = () => {
   return (
     <div>
-      <Head>
-        <script src={env.NEXT_PUBLIC_MONERIS_JS_URL} defer />
-      </Head>
+
       <MonerisMco />
     </div>
   );

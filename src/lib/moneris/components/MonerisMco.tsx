@@ -2,23 +2,35 @@
 import React, { useEffect } from "react";
 
 import useMonerisV2 from "../hooks/useMonerisV2";
-import MonerisResponse from "./MonerisResponse";
+import Head from "next/head";
+import { env } from "~/env.mjs";
+import { type MonerisReceiptResponse } from "../types/moneris";
 
-const MonerisMco = () => {
+interface MonerisCardVerificationProps {
+  handleReceipt: (data: MonerisReceiptResponse) => void;
+  handleCancel?: (data: undefined) => void;
+  handleFailure?: (data: undefined) => void;
+}
+
+const MonerisCardVerification = ({
+  handleReceipt,
+}: MonerisCardVerificationProps) => {
   const { monerisResult } = useMonerisV2();
 
-
-  if (monerisResult) {
-    return <MonerisResponse {...monerisResult} />;
-  }
+  useEffect(() => {
+    if (monerisResult) {
+      handleReceipt(monerisResult);
+    }
+  }, [monerisResult]);
 
   return (
-    <div>
-      <p>MCO Module</p>
-
+    <>
+      <Head>
+        <script src={env.NEXT_PUBLIC_MONERIS_JS_URL} defer />
+      </Head>
       <div id="monerisCheckout"></div>
-    </div>
+    </>
   );
 };
 
-export default MonerisMco;
+export default MonerisCardVerification;

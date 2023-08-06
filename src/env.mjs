@@ -34,6 +34,8 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_MONERIS_JS_URL: z.string().url(),
+    NEXT_PUBLIC_MONERIS_URL: z.string().url(),
+    NEXT_PUBLIC_MONERIS_ENV_MODE: z.enum(["qa", "prod"]),
   },
 
   /**
@@ -50,7 +52,9 @@ export const env = createEnv({
     MONERIS_STORE_ID: process.env.MONERIS_STORE_ID,
     MONERIS_CHECKOUT_ID: process.env.MONERIS_CHECKOUT_ID,
     MONERIS_API_TOKEN: process.env.MONERIS_API_TOKEN,
+    NEXT_PUBLIC_MONERIS_URL: process.env.NEXT_PUBLIC_MONERIS_URL,
     NEXT_PUBLIC_MONERIS_JS_URL: process.env.NEXT_PUBLIC_MONERIS_JS_URL,
+    NEXT_PUBLIC_MONERIS_ENV_MODE: process.env.NEXT_PUBLIC_MONERIS_ENV_MODE,
   },
 
   /**
