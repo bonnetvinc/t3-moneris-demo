@@ -45,7 +45,9 @@ const CreateRegisteredCard = () => {
   if (isLoading) return <LinearProgress />;
   return (
     <>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button variant="contained" onClick={handleOpen}>
+        ADD New Card
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
